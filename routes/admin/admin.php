@@ -21,10 +21,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::delete('/user/delall','UserController@delall')->name('user.delall');
 
 
-        Route::get('user/email',function (){
+        /*Route::get('user/email',function (){
 
             //发送文本邮件
-            /*\Mail::raw('ceshi',function (\Illuminate\Mail\Message $message){
+            \Mail::raw('ceshi',function (\Illuminate\Mail\Message $message){
 //                获取回调方法中的形参
 //                dump(func_get_args());
 //                给谁
@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 //                主题
                 $message->subject('ceshi');
             });
-            */
+
 
             \Mail::send('mail.adduser',['user'=>'张三'],function (\Illuminate\Mail\Message $message){
 //                给谁
@@ -40,10 +40,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 //                主题
                 $message->subject('ceshi');
             });
-        });
+        });*/
 
         Route::get('/user/edit/{id}','UserController@edit')->name('user.edit');
         Route::put('/user/edit/{id}','UserController@update')->name('user.edit');
+
         Route::match(['get','post'],'/user/role/{user}','UserController@role')->name('user.role');
 
         Route::get('role/node/{role}','RoleController@node')->name('role.node');

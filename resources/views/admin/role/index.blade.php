@@ -10,7 +10,7 @@
     @include('admin.common.msg')
     <div class="page-container">
         <form method="get" class="text-c"> 搜索角色名
-            <input type="text" class="input-text" style="width:250px" placeholder="角色" name="name" autocapitalize="off">
+            <input type="text" class="input-text" style="width:250px" placeholder="角色"  value="{{ request()->get('name') }}" name="name" autocapitalize="off">
             <button type="submit" class="btn btn-success radius">
                 <i class="Hui-iconfont">&#xe665;</i> 搜角色
             </button>

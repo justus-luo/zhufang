@@ -17,12 +17,12 @@ class RoleController extends BaseController
     public function index(Request $request)
     {
         //获取搜素框
-        $name = $request->get('name');
+        $name = $request->get('name','');
         //when 如果参数1存在，则执行闭包 use 获取外部变量
         $roles = Role::when($name,function ($query) use ($name){
             $query->where('name','like',"%{$name}%");
         })->paginate($this->pagesiz);
-        return view('admin.role.index',compact('roles'));
+        return view('admin.role.index',compact('roles','name'));
     }
 
     /**

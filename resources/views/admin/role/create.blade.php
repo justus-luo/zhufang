@@ -48,7 +48,7 @@
                 //dom转jquery
                 //表单提交地址
                 let url = $(form).attr('action');
-                //表单虚拟化
+                //表单序列化
                 let data = $(form).serialize();
                 $.post(url,data).then(({status,msg})=>{
                     if(status == 0){

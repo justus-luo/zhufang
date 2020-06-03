@@ -19,10 +19,9 @@ class Node extends Base
         return '<span class="label label-denger radius">否</span>';
     }
 
-    //时间类型转换 "created_at" => "2020-05-18T07:41:02.000000Z"
-    public function getCreatedAtAttribute(){
-
-    }
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d H:i:s',
+    ];
     public function getAllList(){
         $data = self::get()->toArray();
         return $this->treelevel($data);
