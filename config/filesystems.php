@@ -52,6 +52,11 @@ return [
             'driver' => 'local',
             'root' => public_path('uploads/article'),
         ],
+        //fang上传
+        'fangattr' => [
+            'driver' => 'local',
+            'root' => public_path('uploads/fangattr'),
+        ],
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

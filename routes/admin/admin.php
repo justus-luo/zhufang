@@ -53,7 +53,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
         Route::resource('role','RoleController');
         Route::resource('node','NodeController');
         Route::post('article/upfile','ArticleController@upfile')->name('article.upfile');
+        //文章路由
         Route::resource('article','ArticleController');
+        //房源属性
+        Route::post('fangattr/upfile','FangAttrController@upfile')->name('fangattr.upfile');
+        Route::resource('fangattr','FangAttrController');
 
     });
 });

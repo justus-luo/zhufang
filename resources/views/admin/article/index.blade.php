@@ -71,16 +71,16 @@
                 {'data':'created_at'},
                 {'data':'action',"defaultContent":"默认值"}
             ],
-    //         createdRow:function(row,data,dataIndex){
-    //             var id = data.id
-    //             //行的最后一列
-    //             var td = $(row).find('td:last-child');
-    //             var html = `
-    //     <a href="/admin/article/${id}/edit" class="label label-secondary radius">修改</a>
-    //     <a href="/admin/article/${id}" onclick="return delArticle(event this)" class="label label-denger radius">删除</a>
-    // `;
-    //             td.html(html);
-    //         }
+            createdRow:function(row,data,dataIndex){
+                var id = data.id
+                //行的最后一列
+                var td = $(row).find('td:last-child');
+                var html = `
+        <a href="/admin/article/${id}/edit" class="label label-secondary radius">修改</a>
+        <a href="/admin/article/${id}" onclick="return delArticle(event this)" class="label label-denger radius">删除</a>
+    `;
+                td.html(html);
+            }
         });
         //表单提交
         function dopost() {
